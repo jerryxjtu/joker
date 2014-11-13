@@ -1,0 +1,376 @@
+start to process file[./kernel_10b500]
+Source Version:          2107.7.55.2.2
+mach_trap_table offset in file/memory (for patching purposes) @[0x002ee4a0], addr [0x8032f4a0]
+
+dump mach_trap_table
+Kern invalid should be 80028495. Ignoring those
+ 10 _kernelrpc_mach_vm_allocate_trap         80014608 T
+ 12 _kernelrpc_mach_vm_deallocate_trap       80014674 T
+ 14 _kernelrpc_mach_vm_protect_trap          800146b8 T
+ 16 _kernelrpc_mach_port_allocate_trap       8001470c T
+ 17 _kernelrpc_mach_port_destroy_trap        8001475c T
+ 18 _kernelrpc_mach_port_deallocate_trap     80014798 T
+ 19 _kernelrpc_mach_port_mod_refs_trap       800147d4 T
+ 20 _kernelrpc_mach_port_move_member_trap    80014814 T
+ 21 _kernelrpc_mach_port_insert_right_trap   80014858 T
+ 22 _kernelrpc_mach_port_insert_member_trap  800148b8 T
+ 23 _kernelrpc_mach_port_extract_member_trap 800148fc T
+ 26 mach_reply_port                          8001ba90 T
+ 27 thread_self_trap                         8001ba74 T
+ 28 task_self_trap                           8001ba54 T
+ 29 host_self_trap                           80019de0 T
+ 31 mach_msg_trap                            80014f90 T
+ 32 mach_msg_overwrite_trap                  80014e3c T
+ 33 semaphore_signal_trap                    8002775c T
+ 34 semaphore_signal_all_trap                800277e0 T
+ 35 semaphore_signal_thread_trap             800276e8 T
+ 36 semaphore_wait_trap                      80027a84 T
+ 37 semaphore_wait_signal_trap               80027c2c T
+ 38 semaphore_timedwait_trap                 80027b6c T
+ 39 semaphore_timedwait_signal_trap          80027d10 T
+ 44 task_name_for_pid                        8021d3a8 T
+ 45 task_for_pid                             8021d1f8 T
+ 46 pid_for_task                             8021d1ac T
+ 48 macx_swapon                              8021df90 T
+ 49 macx_swapoff                             8021e1e4 T
+ 51 macx_triggers                            8021df70 T
+ 52 macx_backing_store_suspend               8021deec T
+ 53 macx_backing_store_recovery              8021de94 T
+ 58 pfz_exit                                 80027dec T
+ 59 swtch_pri                                80027eb8 T
+ 60 swtch                                    80027df0 T
+ 61 thread_switch                            800280a8 T
+ 62 clock_sleep_trap                         800179cc T
+ 89 mach_timebase_info_trap                  80016b04 T
+ 90 mach_wait_until_trap                     800171cc T
+ 91 mk_timer_create_trap                     8001fb18 T
+ 92 mk_timer_destroy_trap                    8001fd24 T
+ 93 mk_timer_arm_trap                        8001fd68 T
+ 94 mk_timer_cancel_trap                     8001fdec T
+100 kern_invalid                             8026ecc0 T
+Sysent offset in file (for patching purposes) @[0x002f10b8], addr [0x803320b8]
+ARM Exception Vector is at file offset @[0x4c6000], addr [0x80507000]
+
+dump posix_syscall_table
+Suppressing enosys (0x801ecc71)
+  1 exit                                     801d5c00 T
+  2 fork                                     801d8b0c T
+  3 read                                     801ec89c T
+  4 write                                    801ecc70 T
+  5 open                                     800b23e8 T
+  6 close                                    801cdc40 T
+  7 wait4                                    801d6848 T
+  9 link                                     800b292c T
+ 10 unlink                                   800b3034 T
+ 12 chdir                                    800b1ca4 T
+ 13 fchdir                                   800b1b34 T
+ 14 mknod                                    800b2500 T
+ 15 chmod                                    800b3b84 T
+ 16 chown                                    800b3ce0 T
+ 18 getfsstat                                800b18d0 T
+ 20 getpid                                   801dd398 T
+ 23 setuid                                   801dd64c T
+ 24 getuid                                   801dd41c T
+ 25 geteuid                                  801dd42c T
+ 26 ptrace                                   801e9444 T
+ 27 recvmsg                                  8020bc14 T
+ 28 sendmsg                                  8020b75c T
+ 29 recvfrom                                 8020b840 T
+ 30 accept                                   8020b114 T
+ 31 getpeername                              8020bee0 T
+ 32 getsockname                              8020be30 T
+ 33 access                                   800b34f0 T
+ 34 chflags                                  800b396c T
+ 35 fchflags                                 800b3a34 T
+ 36 sync                                     800b1364 T
+ 37 kill                                     801e0f58 T
+ 39 getppid                                  801dd3a0 T
+ 41 dup                                      801cbc90 T
+ 42 pipe                                     801eeefc T
+ 43 getegid                                  801dd4a4 T
+ 46 sigaction                                801e0074 T
+ 47 getgid                                   801dd494 T
+ 48 sigprocmask                              801e05b8 T
+ 49 getlogin                                 801de274 T
+ 50 setlogin                                 801de2ec T
+ 51 acct                                     801c6678 T
+ 52 sigpending                               801e075c T
+ 53 sigaltstack                              801e0e9c T
+ 54 ioctl                                    801ed034 T
+ 55 reboot                                   801e93a8 T
+ 56 revoke                                   800b543c T
+ 57 symlink                                  800b2b9c T
+ 58 readlink                                 800b3870 T
+ 59 execve                                   801d55d4 T
+ 60 umask                                    800b5414 T
+ 61 chroot                                   800b1d74 T
+ 65 msync                                    801d965c T
+ 66 vfork                                    801d81a4 T
+ 73 munmap                                   801d9708 T
+ 74 mprotect                                 801d973c T
+ 75 madvise                                  801d97f4 T
+ 78 mincore                                  801d9860 T
+ 79 getgroups                                801dd4b4 T
+ 80 setgroups                                801de1b8 T
+ 81 getpgrp                                  801dd3a8 T
+ 82 setpgid                                  801dd554 T
+ 83 setitimer                                801e8e90 T
+ 85 swapon                                   8021d1a8 T
+ 86 getitimer                                801e8d48 T
+ 89 getdtablesize                            801cb868 T
+ 90 dup2                                     801cc0e0 T
+ 92 fcntl                                    801cc5ac T
+ 93 select                                   801ed2e0 T
+ 95 fsync                                    800b427c T
+ 96 setpriority                              801de620 T
+ 97 socket                                   8020abbc T
+ 98 connect                                  8020b134 T
+100 getpriority                              801de514 T
+104 bind                                     8020ac88 T
+105 setsockopt                               8020bd48 T
+106 listen                                   8020adf4 T
+111 sigsuspend                               801e0784 T
+116 gettimeofday                             801e8b58 T
+117 getrusage                                801df3b8 T
+118 getsockopt                               8020bdac T
+120 readv                                    801ecb28 T
+121 writev                                   801ecec8 T
+122 settimeofday                             801e8bb4 T
+123 fchown                                   800b3df0 T
+124 fchmod                                   800b3cb4 T
+126 setreuid                                 801dd998 T
+127 setregid                                 801ddd2c T
+128 rename                                   800b446c T
+131 flock                                    801cf398 T
+132 mkfifo                                   800b27dc T
+133 sendto                                   8020b480 T
+134 shutdown                                 8020bd18 T
+135 socketpair                               8020b324 T
+136 mkdir                                    800b4d60 T
+137 rmdir                                    800b4da0 T
+138 utimes                                   800b3ea4 T
+139 futimes                                  800b4078 T
+140 adjtime                                  801e8cb8 T
+142 gethostuuid                              801ee9bc T
+147 setsid                                   801dd510 T
+151 getpgid                                  801dd3b0 T
+152 setprivexec                              801dd380 T
+153 pread                                    801eca8c T
+154 pwrite                                   801ecde8 T
+157 statfs                                   800b1404 T
+158 fstatfs                                  800b16bc T
+159 unmount                                  800b0ecc T
+165 quotactl                                 800b1400 T
+167 mount                                    800b00ac T
+169 csops                                    801dc15c T
+170 csops_audittoken                         801dc648 T
+173 waitid                                   801d6c40 T
+180 kdebug_trace                             801c3f40 T
+181 setgid                                   801ddb30 T
+182 setegid                                  801ddc3c T
+183 seteuid                                  801dd89c T
+184 sigreturn                                8021fb24 T
+185 chud                                     8021e834 T
+187 fdatasync                                800b42f4 T
+188 stat                                     800b35cc T
+189 fstat                                    801ce178 T
+190 lstat                                    800b3718 T
+191 pathconf                                 800b380c T
+192 fpathconf                                801ce1d4 T
+194 getrlimit                                801df200 T
+195 setrlimit                                801deac8 T
+196 getdirentries                            800b4fd8 T
+197 mmap                                     801d914c T
+199 lseek                                    800b30ac T
+200 truncate                                 800b40f8 T
+201 ftruncate                                800b41b8 T
+202 __sysctl                                 801e3604 T
+203 mlock                                    801d99ac T
+204 munlock                                  801d9a04 T
+205 undelete                                 800b2d34 T
+216 mkcomplex                                800b2308 T
+220 getattrlist                              8009c0a4 T
+221 setattrlist                              8009c11c T
+222 getdirentriesattr                        800b5524 T
+223 exchangedata                             800b56e0 T
+225 searchfs                                 800b5920 T
+226 delete                                   800b3070 T
+227 copyfile                                 800b4310 T
+228 fgetattrlist                             800994cc T
+229 fsetattrlist                             8009c824 T
+230 poll                                     801eda44 T
+231 watchevent                               801ee36c T
+232 waitevent                                801ee510 T
+233 modwatch                                 801ee680 T
+234 getxattr                                 800b6594 T
+235 fgetxattr                                800b66d0 T
+236 setxattr                                 800b67d0 T
+237 fsetxattr                                800b68dc T
+238 removexattr                              800b69d8 T
+239 fremovexattr                             800b6aa0 T
+240 listxattr                                800b6b60 T
+241 flistxattr                               800b6c44 T
+242 fsctl                                    800b5e18 T
+243 initgroups                               801de034 T
+244 posix_spawn                              801d46a8 T
+245 ffsctl                                   800b64b8 T
+250 minherit                                 801d97bc T
+266 shm_open                                 8020fe3c T
+267 shm_unlink                               8021091c T
+268 sem_open                                 8020f298 T
+269 sem_close                                8020fa30 T
+270 sem_unlink                               8020f7f8 T
+271 sem_wait                                 8020fa84 T
+272 sem_trywait                              8020fb4c T
+273 sem_post                                 8020fbf0 T
+274 sem_getvalue                             8020fc94 T
+275 sem_init                                 8020fc8c T
+276 sem_destroy                              8020fc90 T
+277 open_extended                            800b221c T
+278 umask_extended                           800b53c4 T
+279 stat_extended                            800b3574 T
+280 lstat_extended                           800b36c0 T
+281 fstat_extended                           801cdf5c T
+282 chmod_extended                           800b3a74 T
+283 fchmod_extended                          800b3bb8 T
+284 access_extended                          800b31e4 T
+285 settid                                   801ddeb8 T
+286 gettid                                   801dd43c T
+287 setsgroups                               801de1c8 T
+288 getsgroups                               801dd508 T
+289 setwgroups                               801de1cc T
+290 getwgroups                               801dd50c T
+291 mkfifo_extended                          800b2738 T
+292 mkdir_extended                           800b4b74 T
+294 shared_region_check_np                   8021d6e4 T
+296 vm_pressure_monitor                      8021de48 T
+297 psynch_rw_longrdlock                     80216cc4 T
+298 psynch_rw_yieldwrlock                    80216f78 T
+299 psynch_rw_downgrade                      80216f80 T
+300 psynch_rw_upgrade                        80216f7c T
+301 psynch_mutexwait                         80213ef0 T
+302 psynch_mutexdrop                         80214eb4 T
+303 psynch_cvbroad                           80214f08 T
+304 psynch_cvsignal                          802154d8 T
+305 psynch_cvwait                            80215960 T
+306 psynch_rw_rdlock                         80216094 T
+307 psynch_rw_wrlock                         80216cc8 T
+308 psynch_rw_unlock                         80216f84 T
+309 psynch_rw_unlock2                        8021727c T
+310 getsid                                   801dd3e0 T
+311 settid_with_pid                          801ddf58 T
+312 psynch_cvclrprepost                      80215f94 T
+313 aio_fsync                                801c705c T
+314 aio_return                               801c7234 T
+315 aio_suspend                              801c74bc T
+316 aio_cancel                               801c6bd4 T
+317 aio_error                                801c6fb0 T
+318 aio_read                                 801c7214 T
+319 aio_write                                801c76d0 T
+320 lio_listio                               801c76f0 T
+322 iopolicysys                              801df5ac T
+323 process_policy                           8021ba6c T
+324 mlockall                                 801d9a40 T
+325 munlockall                               801d9a44 T
+327 issetugid                                801dd63c T
+328 __pthread_kill                           801e0bd0 T
+329 __pthread_sigmask                        801e0c30 T
+330 __sigwait                                801e0ce0 T
+331 __disable_threadsignal                   801e08ac T
+332 __pthread_markcancel                     801e08c8 T
+333 __pthread_canceled                       801e0910 T
+334 __semwait_signal                         801e0ab0 T
+336 proc_info                                80219930 T
+338 stat64                                   800b3618 T
+339 fstat64                                  801ce1b4 T
+340 lstat64                                  800b3764 T
+341 stat64_extended                          800b3668 T
+342 lstat64_extended                         800b37b4 T
+343 fstat64_extended                         801ce198 T
+344 getdirentries64                          800b5384 T
+345 statfs64                                 800b1724 T
+346 fstatfs64                                800b186c T
+347 getfsstat64                              800b1a7c T
+348 __pthread_chdir                          800b1d6c T
+349 __pthread_fchdir                         800b1c9c T
+350 audit                                    801c2c00 T
+351 auditon                                  801c2c04 T
+353 getauid                                  801c2c08 T
+354 setauid                                  801c2c0c T
+357 getaudit_addr                            801c2c10 T
+358 setaudit_addr                            801c2c14 T
+359 auditctl                                 801c2c18 T
+360 bsdthread_create                         80217dd0 T
+361 bsdthread_terminate                      80218048 T
+362 kqueue                                   801d0720 T
+363 kevent                                   801d07a0 T
+364 lchown                                   800b3dd8 T
+365 stack_snapshot                           801c6398 T
+366 bsdthread_register                       802180ac T
+367 workq_open                               80218d00 T
+368 workq_kernreturn                         80219168 T
+369 kevent64                                 801d0a38 T
+370 __old_semwait_signal                     801e0984 T
+371 __old_semwait_signal_nocancel            801e09b8 T
+372 thread_selfid                            8021966c T
+373 ledger                                   801eea24 T
+380 __mac_execve                             801d55f4 T
+381 __mac_syscall                            8027e428 T
+382 __mac_get_file                           8027e0d0 T
+383 __mac_set_file                           8027e318 T
+384 __mac_get_link                           8027e1f4 T
+385 __mac_set_link                           8027e418 T
+386 __mac_get_proc                           8027dbc4 T
+387 __mac_set_proc                           8027dc84 T
+388 __mac_get_fd                             8027df7c T
+389 __mac_set_fd                             8027e204 T
+390 __mac_get_pid                            8027daf8 T
+391 __mac_get_lcid                           8027dd38 T
+392 __mac_get_lctx                           8027ddfc T
+393 __mac_set_lctx                           8027deb8 T
+394 setlcid                                  801de3b4 T
+395 getlcid                                  801de49c T
+396 read_nocancel                            801ec8bc T
+397 write_nocancel                           801ecc90 T
+398 open_nocancel                            800b2478 T
+399 close_nocancel                           801cdc5c T
+400 wait4_nocancel                           801d6868 T
+401 recvmsg_nocancel                         8020bc34 T
+402 sendmsg_nocancel                         8020b77c T
+403 recvfrom_nocancel                        8020b860 T
+404 accept_nocancel                          8020ae34 T
+405 msync_nocancel                           801d9674 T
+406 fcntl_nocancel                           801cc5cc T
+407 select_nocancel                          801ed2fc T
+408 fsync_nocancel                           800b42ec T
+409 connect_nocancel                         8020b14c T
+410 sigsuspend_nocancel                      801e0840 T
+411 readv_nocancel                           801ecb48 T
+412 writev_nocancel                          801ecee8 T
+413 sendto_nocancel                          8020b4a0 T
+414 pread_nocancel                           801ecaac T
+415 pwrite_nocancel                          801ece08 T
+416 waitid_nocancel                          801d6c5c T
+417 poll_nocancel                            801eda64 T
+420 sem_wait_nocancel                        8020faa0 T
+421 aio_suspend_nocancel                     801c74dc T
+422 __sigwait_nocancel                       801e0d18 T
+423 __semwait_signal_nocancel                801e0ae4 T
+424 __mac_mount                              800b00d0 T
+425 __mac_get_mount                          8027e620 T
+426 __mac_getfsstat                          800b18f4 T
+427 fsgetpath                                800b6d28 T
+428 audit_session_self                       801c2bf4 T
+429 audit_session_join                       801c2bf8 T
+430 fileport_makeport                        801cf47c T
+431 fileport_makefd                          801cf620 T
+432 audit_session_port                       801c2bfc T
+433 pid_suspend                              8021d4c0 T
+434 pid_resume                               8021d530 T
+435 pid_hibernate                            8021d5a8 T
+436 pid_shutdown_sockets                     8021d600 T
+438 shared_region_map_and_slide_np           8021dc94 T
+439 kas_info                                 8021de90 T
+440 memorystatus_control                     801e75b8 T
+441 guarded_open_np                          801cfc5c T
+442 guarded_close_np                         801cfd68 T
